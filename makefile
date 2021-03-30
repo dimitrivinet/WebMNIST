@@ -6,10 +6,10 @@ OUTPUT_EXPORT=output_models/model
 EPOCHS=20
 
 
-all: train_export clean
+all: train_export
 
 train_export:
-	${PYTHON} -m webmnist --train -o ${OUTPUT_TRAIN} --epochs ${EPOCHS}
+	${PYTHON} -m webmnist --train -o ${OUTPUT_TRAIN} --num-epochs ${EPOCHS}
 	${PYTHON} -m webmnist --export -i ${INPUT} -o ${OUTPUT_EXPORT}
 
 train:

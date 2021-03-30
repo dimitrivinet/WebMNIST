@@ -57,7 +57,8 @@ def train(path: str, save_all: bool, epochs: int = 3,) -> None:
 
         if acc > best_acc:
             torch.save(model.state_dict(), f"{path}/best.pt")
-            tqdm.write("saved best\n")
+            tqdm.write("saved best")
+            best_acc = acc
 
         if save_all:
             torch.save(

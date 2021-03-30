@@ -15,9 +15,7 @@ import torchvision.transforms as T
 # print(MNIST.resources)
 
 train_transform = T.Compose([
-    T.RandomRotation(360), 
-    T.RandomHorizontalFlip(), 
-    T.RandomVerticalFlip(), 
+    T.RandomRotation(360),
     T.ToTensor(),
 ])
 valid_transform = T.ToTensor()
@@ -42,14 +40,14 @@ class MNISTDataset(NamedTuple):
 @dataclass
 class MNISTLoader(NamedTuple):
     trainloader = DataLoader(MNISTDataset.trainset, 
-        batch_size=128, 
+        batch_size=32, 
         shuffle=True, 
-        num_workers=4, 
+        num_workers=6, 
         pin_memory=True,
     )
     validloader = DataLoader(MNISTDataset.validset, 
-        batch_size=128, 
+        batch_size=32, 
         shuffle=False, 
-        num_workers=4, 
+        num_workers=6, 
         pin_memory=True,
     )

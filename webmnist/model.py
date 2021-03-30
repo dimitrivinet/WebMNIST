@@ -60,6 +60,7 @@ class LeNet5(nn.Module):
             nn.ReLU(inplace=True),
 
             nn.Linear(64, self.n_classes),
+            nn.LogSoftmax(dim=-1),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:

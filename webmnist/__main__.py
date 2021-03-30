@@ -42,11 +42,13 @@ SAVE_ALL = args.save_all
 if TRAIN:
     if not os.path.exists(OUTPUT_PATH):
         print(f"crating dir {OUTPUT_PATH}")
-        os.mkdir(OUTPUT_PATH)
+        os.makedirs(OUTPUT_PATH)
 
     train(OUTPUT_PATH, SAVE_ALL, NUM_EPOCHS)
     
 elif EXPORT:
-    if os.path.exists(INPUT_PATH):       
+    if os.path.exists(INPUT_PATH):
+        if not os.path.exists(OUTPUT_PATH):
+            os.makedirs(OUTPUT_PATH)    
 
         export(INPUT_PATH, OUTPUT_PATH)
