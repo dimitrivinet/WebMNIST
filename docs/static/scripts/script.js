@@ -91,6 +91,7 @@ function mouseDownEventHandler(e) {
 }
 
 function touchstartEventHandler(e) {
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     paint = true;
     if (paint) {
         addClick(e.touches[0].pageX - canvas.offsetLeft, e.touches[0].pageY - canvas.offsetTop, false);
