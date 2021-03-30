@@ -5,6 +5,7 @@ from typing import NamedTuple
 from dataclasses import dataclass
 
 import torchvision.transforms as T
+from torchvision.transforms.transforms import RandomRotation
 
 
 # MIRROR = "https://ossci-datasets.s3.amazonaws.com/mnist"
@@ -15,10 +16,14 @@ import torchvision.transforms as T
 # print(MNIST.resources)
 
 train_transform = T.Compose([
-    T.RandomRotation(360),
+    T.RandomRotation(25),
     T.ToTensor(),
+    T.Normalize((0.1307,), (0.3081,)),
 ])
-valid_transform = T.ToTensor()
+valid_transform = T.Compose([
+    T.ToTensor(),
+    T.Normalize((0.1307,), (0.3081,)),
+])
 
 
 @dataclass
