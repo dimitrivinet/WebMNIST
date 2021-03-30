@@ -1,6 +1,8 @@
 # Custom-added
 advia_venv/
-
+dataset/
+trained_models/
+output_models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
