@@ -2,14 +2,7 @@
 
 var content = document.getElementById("content");
 
-
-function preventDefault(e) {
-    e = e || window.event;
-    if (e.preventDefault)
-        e.preventDefault();
-    e.returnValue = false;  
-  }
-document.addEventListener('touchmove',preventDefault, false);
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 
 var digits = [];
 
