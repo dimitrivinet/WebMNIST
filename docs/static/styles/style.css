@@ -1,0 +1,76 @@
+
+/*
+règles:
+    sauter 2 niveaux de gras 
+    diviser par 2 la taille de la font (visuellement)
+    laisser respirer la page
+*/ 
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #000000
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+#title {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+#web {
+    color: #000000;
+}
+#mnist {
+    color: #3c78d8;
+}
+
+#card {
+    width: 256px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+}
+#canvas {
+    background-color: #000000;
+}
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bar {
+    height: 100px;
+    width: 0.5rem;
+    background-color: #e0dcdc;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.label {
+    margin: 1rem 0;
+}
+
+.argmax {
+    font-weight: 400;
+    color: #3c78d8;
+}
+
+.argmax .bar {
+    background-color: #3c78d8;
+}
