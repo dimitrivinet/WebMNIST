@@ -2,8 +2,6 @@
 
 var content = document.getElementById("content");
 
-document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
-
 var digits = [];
 
 for (let i = 0; i < 10; i++) {
@@ -93,6 +91,7 @@ function mouseDownEventHandler(e) {
 }
 
 function touchstartEventHandler(e) {
+    e.preventDefault();
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     paint = true;
     if (paint) {
